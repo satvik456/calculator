@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+          background: linear-gradient(45deg,#0a0a0a,#3a4452 );
+        }
+        .container{
+            display: flex;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+           width: 100vw;
+        }
+        #container{
+            border: 2px solid #737477;
+            width: 200px;
+            padding: 8px 8px 20px 8px;
+            margin: 20px auto;
+            background: transparent;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px black;
+        }
+        input{
+            width: 250px;
+            height: 50px;
+            background: transparent;
+            color: white;
+            font-size: 20px;
+            text-align: right;
+        }
+        button{
+          height: 40px;
+          width: 40px;
+          border: none ;
+          margin: 10px;
+          border-radius: 50%;
+          background:transparent;
+          color: white;
+          box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+          cursor: pointer;
+}
+#dif{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 2px 2px 5px gray;
+    background: linear-gradient(to right ,yellow,green);
+     color: transparent;
+     -webkit-background-clip: text;
+}
+.equal{
+    background-color: #fb7c14;
+}
+.operator{
+    background-color:#32de84;
+    
+}
+    </style>
+
+
+<script>
+    function btnpress(x){
+      var a= document.getElementById("t1").value;
+       console.log(a);cc
+       if(a==0){
+        document.getElementById("t1").value="";
+       }
+        document.getElementById("t1").value+=x;
+    }
+    function cleardata(){
+        document.getElementById("t1").value="0";
+       
+    }
+    function backpress(){
+        var a=document.getElementById("t1").value;
+        var b=a.length;
+        var c=a.substr(0,b-1);
+        document.getElementById("t1").value=c;
+    }
+    function result(){
+        var a= document.getElementById("t1").value;
+        var b=eval(a);
+        document.getElementById("t1").value=b;
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+    <table id="container">
+        <tr>
+            <td colspan="4"><input type="text" id="t1"></td>
+        </tr>
+        <tr>
+            <td><button onclick="cleardata()" id="dif">AC</button></td>
+            <td><button onclick="btnpress('%')" id="dif">%</button></td>
+            <td><button onclick="backpress()" id="dif">&larr;</button></td>
+            <td><button onclick="btnpress('/')" id="dif">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('9')">9</button></td>
+            <td><button onclick="btnpress('8')">8</button></td>
+            <td><button onclick="btnpress('7')">7</button></td>
+            <td><button onclick="btnpress('*')"  class="operator">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('6')">6</button></td>
+            <td><button onclick="btnpress('5')">5</button></td>
+            <td><button onclick="btnpress('4')">5</button></td>
+            <td><button onclick="btnpress('+')"  class="operator">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('3')">9</button></td>
+            <td><button onclick="btnpress('2')">8</button></td>
+            <td><button onclick="btnpress('1')">7</button></td>
+            <td><button onclick="btnpress('-')"  class="operator">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('00')">00</button></td>
+            <td><button onclick="btnpress('0')">0</button></td>
+            <td><button onclick="btnpress('.')">.</button></td>
+            <td><button onclick="result('=')" class="equal">=</button></td>
+        </tr>
+    </table>
+    </div>
+</body>
+
+</html>

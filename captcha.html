@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh</title>
+    <style>
+        .main{
+            height: 200px;
+            width: 300px;
+           border-radius:40px 10px;
+           background: white;
+           border: none;
+           box-shadow: 5px 5px 10px black;
+           margin: 20px auto;
+           margin-top: 130px;
+           padding-left: 80px;
+           padding-top: 20px;
+
+        }
+        #p1{
+            background-image: url('captcha1.jpg');
+            width: 120px;
+            color: black;
+            text-decoration-line: line-through;
+
+        }
+        button{
+            border-radius: 15px;
+            transition: 0.5s ease-in;
+        }
+        button:hover{
+            background-color: red;
+        }
+    </style>
+    <script>
+        function Random(min,max){
+               var a=Math.random();
+               var b=a*(max-min)+min;
+               b=parseInt(b);
+               return b;
+        }
+        function generate(){
+            var a=Random(0,9);
+            
+            var b=String.fromCharCode(Random(65,90));
+            var c=String.fromCharCode(Random(97,122));
+            var d=Random(0,9);
+            var e=String.fromCharCode(Random(65,90));
+            var f=String.fromCharCode(Random(97,122));
+            var code=""+a+b+c+d+e+f;
+            document.getElementById("p1").innerHTML=code;
+            document.getElementById("p1").style.fontStyle="italic";
+        }
+        function validate(){
+            var a=document.getElementById("p1").innerText;
+            var b=document.getElementById("t1").value;
+            if(a==b){
+                alert("Success");
+            }
+            else{
+                alert("Try Again");
+            }
+        }
+    </script>
+</head>
+<body onload="generate()">
+    <div class="main">
+    <h1 id="p1"></h1>
+    <button onclick="generate()">Refresh</button><br><br>
+    <input type="" id="t1"><br><br>
+    <button onclick="validate()">Submit</button>
+    </div>    
+</body>
+</html>

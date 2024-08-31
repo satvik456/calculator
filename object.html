@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-JavaScript</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    // const person={
+    //     name:"Satvik",
+    //     lname:"Tiwari",
+    //     age:23,
+    //     haircolor:"black"
+    // };
+    // document.getElementById("demo").innerHTML=person.name +" " + person.lname;
+
+
+    const myobject={
+        fname:"Satvik",
+        lname:"Tiwari",
+        fullname:function(){
+            return this.fname + " " + this.lname;
+        }
+        
+    };
+    document.getElementById("demo").innerHTML=myobject.fullname();
+</script>
+</html>

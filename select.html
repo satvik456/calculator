@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>
+    <label for="country" id="" lang="">Country :</label>
+    <select name="country" id="country" onchange="demo()">
+        <option value="1">India</option>
+        <option value="2">Australia</option>
+
+        <option value="3">SriLanka</option>
+
+        <option value="4">England</option>
+
+    </select>
+</body>
+<script>
+    function demo(){
+       var a = document.getElementById("country");
+       alert(a.value);
+    }
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        h1{
+            text-align: center;
+            height: 30px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        .main{
+            height: 300px;
+            width: 400px;
+            margin: 20px auto;
+           border-radius: 25% 10%;
+           background-color: #fff;
+           margin-top: 50px;
+            color: black;
+          
+           
+           
+        }
+        input{
+            margin-left: 20px;
+            text-align: center;
+        }
+        form{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        button{
+            border-radius: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1> Validation Form</h1>
+    <div class="main">
+        <form action="" onsubmit=" return validateform()">
+            Enter your name:
+            <input type="text" id="t1" placeholder="Enter Your Name"><br><br>
+            Mobile Number :
+            <input type="number" id="m1" placeholder="Enter Your Number"><br><br>
+            Email :
+            <input type="email" id="e1" placeholder="Enter Your Email"><br><br>
+            Date-Of-Birth :
+            <input type="date" id="d1" placeholder="Select Your DOB"><br><br>
+            Gender :
+            <input type="radio" id="male" lang="" value="male">
+            <label for="male"> Male</label>
+            <input type="radio" id="female" lang="" value="female">
+            <label for="female">Female</label> <br><br>
+            <label for="select" id="course">Course :</label>
+            <select name="course" id="course">
+                <option value="mernstack">Mern Stack</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value=".net">.Net</option>
+            </select><br></br>
+            <button id="btn" >Submit</button>
+
+        </form>
+    </div>
+</body>
+
+<script>
+    function validateform(){
+           const name=document.getElementById("t1").value;
+           const namePattern=/^[A-Za-z\s]+$/;
+           if(!namePattern.test(name)){
+            alert("Please Enter Valid Name");
+           t1.style.borderColor="red";
+           return false;
+           }
+           // Validate Gmail
+           const gmail=document.getElementById("e1").value;
+           const gmailPattern=/^[a-zA-Z0-9.%+-]+@gmail\.com$/;
+           if(!gmailPattern.test(gmail)){
+            alert("Please Enter Valid Email");
+           }
+           // Validate Mobile
+           const mobile=document.getElementById("m1").value;
+           const mobilePattern=/^[6789]\d{9}$/;
+           if(!mobilePattern.test(mobile)){
+            alert("Please Enter valid mobile number");
+        
+           }
+           return true;
+          
+    }
+   
+</script>
+</html>
